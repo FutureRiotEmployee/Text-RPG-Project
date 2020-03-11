@@ -1,6 +1,9 @@
 import random
 gameIsPlaying = ''
+
+name = 'derk'
 def ticTacToe():
+    gold = 100
     def drawBoard(board):
         print('------------')
         print('   |   |')
@@ -25,7 +28,7 @@ def ticTacToe():
             return ['O', 'X']
     def whoGoesFirst():
         if random.randint(0, 1) == 0:
-            return 'player1'
+            return 'player'
         else:
             return 'computer'
 
@@ -42,7 +45,7 @@ def ticTacToe():
             (bo[1] == le and bo[2] == le and bo[3]== le) or
             (bo[7] == le and bo[4] == le and bo[1]== le) or
             (bo[8] == le and bo[5] == le and bo[2]== le) or
-            (bo[9] == le and bo[7] == le and bo[3]== le) or
+            (bo[9] == le and bo[7] == le and bo[8]== le) or
             (bo[7] == le and bo[5] == le and bo[3]== le) or
             (bo[9] == le and bo[5] == le and bo[1]== le))
     def getBoardCopy(board):
@@ -78,8 +81,8 @@ def ticTacToe():
         for i in range(1, 10): 
             copy = getBoardCopy(board) 
             if isSpaceFree(copy, i): 
-                makeMove(copy, playerLetter, i) 
-                if isWinner(copy, playerLetter): 
+                makeMove(copy, computerLetter, i) 
+                if isWinner(copy, computerLetter): 
                     return i 
 
      
@@ -97,7 +100,7 @@ def ticTacToe():
                  return False 
          return True
     def computer():
-        if isWinner(theBoard, playerLetter) and  choice == '1':
+        if isWinner(theBoard, computerLetter):
             drawBoard(theBoard)
             print('The computer has won.')
             gameIsPlaying = False
@@ -131,6 +134,9 @@ def ticTacToe():
                 if isWinner(theBoard, playerLetter):
                     drawBoard(theBoard)
                     print('hooray! you have won the game')
+                    gold = gold+20
+                    win = True
+                    return win and gold
                     gameIsPlaying = False
                 elif isBoardFull(theBoard):
                     drawBoard(theBoard)
@@ -145,6 +151,8 @@ def ticTacToe():
                 if isWinner(theBoard, computerLetter):
                     drawBoard(theBoard)
                     print('the computer has beaten you! you lose.')
+                    drawBoard(theBoard)
+                    
                     gameIsPlaying = False
                 elif isBoardFull(theBoard):
                     drawBoard(theBoard)
@@ -155,13 +163,13 @@ def ticTacToe():
         if not playAgain():
             break
 def numberGuess():
+    gold = 100
+    name = 'derk'
     guessnumber = 0
     guess = 0
 
     number = random.randint(1,50)
 
-    print('would you like to play a game? enter name here')
-    name = input()
     print('well ' + name + ' guess the number im thinking of 1-50 or else,')
     while guessnumber < 10:
         print('guess!')
@@ -185,11 +193,17 @@ def numberGuess():
         guessnumber = str(guessnumber)
         
         print('yay ' + (name) + ' hast won in ' + (guessnumber) + ' guesses')
-
+        gold = gold+20
+        win = True
+        return (gold, win)
     if guess != number:
         number = str(number)
-        print((name) + '... im disapointed, you lost poopy head. The numer was ' + (number))
+        print((name) + '... Im disapointed, you lost. The numer was ' + (number))
+        win = False
+        gold = gold
+        return (win, gold)
 def rockPaper():
+    gold = 100
     def rock():
         ai = random.randint(1,3)
         ai = str(ai)
@@ -198,16 +212,20 @@ def rockPaper():
                 print('it was a tie')
                 ai = random.randint(1,3)
                 ai = str(ai)
-                redo = input()
-                    
-            elif ai == '2':
-                print('You won! the AI choose Scissors')
-                redo =1
-                break
-            elif ai == '3':
-                print('you lost! the AI choose paper!')
                 redo = 0
                 return redo
+                    
+            if ai == '2':
+                print('You won! the AI choose Scissors')
+                win = True
+                gold = gold +20
+                return(win, gold)
+                
+            else:
+                print('you lost! the AI choose paper!')
+                win = False
+                gold = gold
+                return(win, gold)
         
             
     def Scissors():
@@ -216,15 +234,19 @@ def rockPaper():
         while choice == 's' or choice == 'S':
             if ai == '1':
                 print('You lost! the ai used Rock')
-               
+                gold = gold
+                return(win, gold)
                 break
             elif ai == '2':
                 print('it was a tie')
                 ai = random.randint(1,3)
                 ai = str(ai)
-                redo = input()
+                redo = 0
+                return redo
             elif ai == '3':
-                print('you won! the AI choose paper.')            
+                print('you won! the AI choose paper.')
+                gold = gold +20
+                return(win, gold)
                 break           
             break
         
@@ -234,11 +256,14 @@ def rockPaper():
         while choice == 'p' or choice == 'P':
             if ai == '1':
                 print('You won! the AI choose rock')
-                redo = 1
+                gold = gold +20
+                return(win, gold)
+                
                 break
             elif ai == '2':
                 print('You lost! the AI choose Scissors')
-                redo =1
+                gold = gold
+                return(win, gold)
                 break
             elif ai == '3':
                 
@@ -246,35 +271,34 @@ def rockPaper():
                     print('it was a tie')
                     ai = random.randint(1,3)
                     ai = str(ai)
-                    redo = input()
+                    redo = 0
+                    return redo
     replay = 0
-    while replay == 0 or replay == 'r':
-        
+    while replay == 0:
         print('Pick Rock Paper or Scissors rock beats Scissors Scissors beat paper and paper   beats rock(you will be trying to beat an AI.)')
         choice = input()
 
         if choice == 'r' or choice == 'R':
-            rock()
+            replay = rock()
           
            
             
         if choice == 's' or choice == 'S':
-            Scissors()
+            replay = Scissors()
            
             
         if choice == 'p' or choice == 'P':
-+            paper()
+           replay = paper()
             
-        print('do you want to play again?(r to play again p to quit)')
-        replay = input()
 
 def pickgame():
-    game = random.randint(1,3)
+    game = random.randint(3,3)
     if game == 1:
         rockPaper()
     elif game == 2:
         numberGuess()
     else:
        ticTacToe()
-
+gold = 100
+pickgame()
                 
