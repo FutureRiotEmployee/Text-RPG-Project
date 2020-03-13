@@ -230,9 +230,157 @@ item37 = {'name':'Intermediate Short Sword',
         'intel value': 0,
         'health value':0}
 
-print (item45['name'])
+##############
+#Average item#
+##############
 
+item36 = {'name':'Average Plate Helmet',
+        'strength value': 2,
+        'dexterity value': 5,
+        'intel value': 7,
+        'health value':20}
 
+item35 = {'name':'Average Plate Aromor',
+        'strength value': 4,
+        'dexterity value': 6,
+        'intel value': 8,
+        'health value':25}
 
+item34 = {'name':'Average Mage Hood',
+        'strength value': -4,
+        'dexterity value': 3,
+        'intel value': 15,
+        'health value':6}
 
+item33 = {'name':'Average Mage Robes',
+        'strength value': -2,
+        'dexterity value': 4,
+        'intel value': 20,
+        'health value':8}
 
+item32 = {'name':'Average Leather Guise ',
+        'strength value': 2,
+        'dexterity value': 3,
+        'intel value': 6,
+        'health value':15}
+
+item31 = {'name':'Average Leather Armor',
+        'strength value': 3,
+        'dexterity value': 4,
+        'intel value': 7,
+        'health value':20}
+
+item30 = {'name':'Average Dagger',
+        'strength value': 3,
+        'dexterity value': 9,
+        'intel value': 5,
+        'health value':-3}
+
+item29 = {'name':'Average Amplifiying Tome',
+        'strength value': -3,
+        'dexterity value': 4,
+        'intel value': 10,
+        'health value':0}
+
+item28 = {'name':'Average Staff ',
+        'strength value': 3,
+        'dexterity value': 5,
+        'intel value': 10,
+        'health value':0}
+
+item27 = {'name':'Average Long Sword ',
+        'strength value': 10,
+        'dexterity value': 4,
+        'intel value': 0,
+        'health value':0}
+
+item26 = {'name':'Average Shield',
+        'strength value': 3,
+        'dexterity value': -3,
+        'intel value': 0,
+        'health value':0}
+
+item25 = {'name':'Average Short Sword',
+        'strength value': 7,
+        'dexterity value': 4,
+        'intel value': 0,
+        'health value':0}
+
+############
+#Weak Items#
+############
+
+item24 = {'name':'Weak Plate Helmet',
+        'strength value': 1,
+        'dexterity value': 3,
+        'intel value': 5,
+        'health value':12}
+
+item23 = {'name':'Weak Plate Armor',
+        'strength value': 3,
+        'dexterity value': 4,
+        'intel value': 6,
+        'health value':17}
+
+item22 = {'name':'Weak Mage Hood',
+        'strength value': -3,
+        'dexterity value': 2,
+        'intel value': 10,
+        'health value':5}
+
+item21 = {'name':'Weak Mage Robes',
+        'strength value': -1,
+        'dexterity value': 3,
+        'intel value': 15,
+        'health value':7}
+
+item20 = {'name':'Weak Leather Guise',
+        'strength value': 1,
+        'dexterity value': 2,
+        'intel value': 3,
+        'health value':10}
+
+item19 = {'name':'Weak Leather Armor',
+        'strength value': 2,
+        'dexterity value': 3,
+        'intel value': 4,
+        'health value':15}
+
+item18 = {'name':'Weak Dagger',
+        'strength value': 2,
+        'dexterity value': 6,
+        'intel value': 3,
+        'health value':-2}
+
+item17 = {'name':'Weak Amplifiying tome',
+        'strength value': -2,
+        'dexterity value': 3,
+        'intel value': 7,
+        'health value':0}
+
+item16 = {'name':'Weak Staff',
+        'strength value': 2,
+        'dexterity value': 4,
+        'intel value': 7,
+        'health value':0}
+
+item15 = {'name':'Weak Long Sword',
+        'strength value': 7,
+        'dexterity value': 2,
+        'intel value': 0,
+        'health value':0}
+
+item14 = {'name':'Weak Shield',
+        'strength value': 4,
+        'dexterity value': -2,
+        'intel value': 0,
+        'health value':0}
+
+item13 = {'name':'Weak Short Sword',
+        'strength value': 4,
+        'dexterity value': 2,
+        'intel value': 0,
+        'health value':0}
+print (item13['name'])
+
+#End
